@@ -10,7 +10,7 @@ import Letter from "./Letter";
 
 function Footer() {
   return (
-    <div className="bg-customGray text-primary absolute  ">
+    <div className="bg-customGray text-primary absolute mt-8  ">
       <Letter />
       {/* Footer Container */}
       <div className="w-full max-w-[1440px] mx-auto px-6 md:px-24 py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">

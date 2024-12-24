@@ -86,9 +86,8 @@ const Card = () => {
         <h1 className="text-4xl font-bold mb-6 mt-3 text-primary">Your Card</h1>
 
         <div className="flex flex-col lg:flex-row gap-8 ">
-  
-{/* card */}
-<div className="flex-1 flex flex-col gap-4 ">
+          {/* card */}
+          <div className="flex-1 flex flex-col gap-4 ">
             {cartItems.length === 0 ? (
               <p className="text-lg text-gray-700">
                 No items in your cart yet.
@@ -118,8 +117,10 @@ const Card = () => {
 
                   {/* Product Info */}
                   <div className="flex-1 px-4 text-[10px] sm:text-lg">
-                    <h3 className="text-[12px] sm:text-lg font-bold">{item.name}</h3>
-                    
+                    <h3 className="text-[12px] sm:text-lg font-bold">
+                      {item.name}
+                    </h3>
+
                     <p className="flex gap-1">
                       <span>Size:</span>
                       <span className="text-gray-400">{item.size}</span>
@@ -154,13 +155,10 @@ const Card = () => {
                 </div>
               ))
             )}
-          </div> 
-
-       
-
+          </div>
 
           {/* Order Summary */}
-          <div className="w-full lg:w-1/3 bg-gray-100 p-4 rounded-lg">
+          <div  className="w-full lg:w-1/3 bg-gray-100 p-4 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
 
             {/* Subtotal */}
@@ -171,7 +169,9 @@ const Card = () => {
 
             {/* Discount */}
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-[15px] sm:text-lg text-gray-400">Discount(-20%)</h3>
+              <h3 className="text-[15px] sm:text-lg text-gray-400">
+                Discount(-20%)
+              </h3>
               <div className="flex justify-between w-2/3">
                 <p className="text-lg text-center ml-6 sm:ml-12 ">$120</p>
                 <p className="text-lg text-[#FF3333] font-bold">-$445</p>
@@ -180,7 +180,9 @@ const Card = () => {
 
             {/* Delivery Fee */}
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-[15px] sm:text-lg text-gray-400">Delivery Fee</h3>
+              <h3 className="text-[15px] sm:text-lg text-gray-400">
+                Delivery Fee
+              </h3>
               <p className="text-lg font-bold">$20</p>
             </div>
 
@@ -194,28 +196,27 @@ const Card = () => {
             </div>
 
             {/* Promo Code Input */}
-            
-<div className="flex items-center mb-4 gap-3">
-  <div className="relative flex items-center w-full sm:w-auto">
-    <Image
-      src={"/inputicon.png"}
-      alt="icon"
-      width={15}
-      height={15}
-      className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10"
-    />
-    <input
-      type="text"
-      placeholder="Add promo code"
-      className="pl-8 border border-gray-300 rounded-full p-2 w-full sm:w-auto"
-    />
-  </div>
 
-  <button className="px-3 py-2 sm:px-5 sm:py-2 bg-primary text-white rounded-full hover:bg-opacity-90">
-    Apply
-  </button>
-</div>
+            <div className="flex items-center mb-4 gap-3">
+              <div className="relative flex items-center w-full sm:w-auto">
+                <Image
+                  src={"/inputicon.png"}
+                  alt="icon"
+                  width={15}
+                  height={15}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10"
+                />
+                <input
+                  type="text"
+                  placeholder="Add promo code"
+                  className="pl-8 border border-gray-300 rounded-full p-2 w-full sm:w-auto"
+                />
+              </div>
 
+              <button className="px-3 py-2 sm:px-5 sm:py-2 bg-primary text-white rounded-full hover:bg-opacity-90">
+                Apply
+              </button>
+            </div>
 
             {/* Total Price */}
             <p className="text-lg mb-4 font-bold flex justify-between items-center">
@@ -230,13 +231,6 @@ const Card = () => {
               </button>
             </div>
           </div>
-
-          {/* Cart Items */}
-          
-          
-
-
-
         </div>
       </div>
     </section>
@@ -244,13 +238,3 @@ const Card = () => {
 };
 
 export default Card;
-
-
-
-
-
-
-
-
-
-

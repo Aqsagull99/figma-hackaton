@@ -14,17 +14,20 @@ const TopSellingSection = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-
   return (
     <section className="w-full py-12 bg-gray-100">
       <div className="container mx-auto px-6">
         {/* Breadcrumbs */}
         <div className="flex items-center mb-4 text-sm text-gray-600">
           <Link href="/">
-            <span className="text-primary cursor-pointer hover:underline">Home</span>
+            <span className="text-primary cursor-pointer hover:underline">
+              Home
+            </span>
           </Link>
-          <span><ChevronRight className="w-4 h-4" /></span>
-          <span >Casual</span>
+          <span>
+            <ChevronRight className="w-4 h-4" />
+          </span>
+          <span>Casual</span>
         </div>
 
         {/* Showing products and sort */}
@@ -35,29 +38,25 @@ const TopSellingSection = () => {
               className="text-sm text-gray-700 flex items-center"
               onClick={toggleDropdown}
             >
-              
-              <span>
-                {/* <ChevronDown className="w-4 h-4" /> */}
-              </span>
+              <span>{/* <ChevronDown className="w-4 h-4" /> */}</span>
             </button>
 
-            <div  className="flex flex-wrap items-center justify-between gap-4 sm:gap-0 sm:flex-row flex-col">
-  <p className="text-sm text-gray-700 sm:mr-auto">Showing 1-10 of 100 Products</p>
-  <div className="relative">
-    <button
-      className="text-sm text-gray-700 flex items-center"
-      onClick={toggleDropdown}
-    >
-      Sort by: Most Popular
-      <span>
-        <ChevronDown className="w-4 h-4 ml-1" />
-      </span>
-    </button>
-  </div>
-</div>
-
-           
-
+            <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-0 sm:flex-row flex-col">
+              <p className="text-sm text-gray-700 sm:mr-auto">
+                Showing 1-10 of 100 Products
+              </p>
+              <div className="relative">
+                <button
+                  className="text-sm text-gray-700 flex items-center"
+                  onClick={toggleDropdown}
+                >
+                  Sort by: Most Popular
+                  <span>
+                    <ChevronDown className="w-4 h-4 ml-1" />
+                  </span>
+                </button>
+              </div>
+            </div>
 
             {isDropdownOpen && (
               <div className="absolute right-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48">
@@ -82,21 +81,23 @@ const TopSellingSection = () => {
 
         {/* Product Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {products.map(product => {
-            return <ProductCard
-            key={product.id}
-            name={product.name}
-              title={product.title}
-              description={product.description}
-              price={product.price}
-              oldPrice={product.oldPrice!}
-              discount={product.discount!}
-              rating={product.rating}
-              score={product.score}
-              imageUrl={product.imageUrl}
-              link={product.link}
-              callback={()=> window.location.href = `/sale/${product.id}`}
-            />
+          {products.map((product) => {
+            return (
+              <ProductCard
+                key={product.id}
+                name={product.name}
+                title={product.title}
+                description={product.description}
+                price={product.price}
+                oldPrice={product.oldPrice!}
+                discount={product.discount!}
+                rating={product.rating}
+                score={product.score}
+                imageUrl={product.imageUrl}
+                link={product.link}
+                callback={() => (window.location.href = `/sale/${product.id}`)}
+              />
+            );
           })}
         </div>
 
@@ -109,8 +110,8 @@ const TopSellingSection = () => {
             className=" px-4 py-2 text-primary rounded hover:bg-black hover:text-maintext border border-gray-400  flex justify-center items-center space-x-2 w-full sm:w-auto"
             disabled
           >
-            <ArrowLeft className="h-4 w-4" /> 
-            <span>Previous</span> 
+            <ArrowLeft className="h-4 w-4" />
+            <span>Previous</span>
           </button>
 
           {/* Page Numbers */}
@@ -138,7 +139,7 @@ const TopSellingSection = () => {
 
           <button className="px-4 py-2  text-primary rounded hover:bg-black hover:text-maintext border border-gray-400 flex justify-center items-center space-x-2 w-full sm:w-auto">
             <span>Next</span> {/* Text */}
-            <ArrowRight className="h-4 w-4 mt-1" /> 
+            <ArrowRight className="h-4 w-4 mt-1" />
           </button>
         </div>
       </div>
@@ -147,4 +148,3 @@ const TopSellingSection = () => {
 };
 
 export default TopSellingSection;
-
