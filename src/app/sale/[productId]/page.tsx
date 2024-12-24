@@ -174,9 +174,9 @@ const ProductDetail = () => {
                   >
                     +
                   </button>
-                  <button className="w-full bg-primary text-white py-3 rounded-full hover:bg-opacity-90">
+                 <Link href={"/card"}> <button className="w-full bg-primary text-white py-3 px-4 sm:py-3 sm:px-16 rounded-full hover:bg-opacity-90">
                     Add to Cart
-                  </button>
+                  </button></Link>
                 </div>
               </div>
             </div>

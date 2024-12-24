@@ -19,9 +19,9 @@ const Letter = () => {
             <span className="flex items-center px-3">
               <Image
                 priority
-                src="/icons/envelope.svg"
-                height={20}
-                width={20}
+                src="/envoicon.png"
+                height={15}
+                width={15}
                 alt="email"
                 className="min-w-5 min-h-5"
               />

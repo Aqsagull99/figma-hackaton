@@ -20,7 +20,7 @@ const TopSellingSection = () => {
         {/* Breadcrumbs */}
         <div className="flex items-center mb-4 text-sm text-gray-600">
           <Link href="/">
-            <span className="text-primary cursor-pointer">Home</span>
+            <span className="text-primary cursor-pointer hover:underline">Home</span>
           </Link>
           <span>
             <ChevronRight className="w-4 h-4" />
