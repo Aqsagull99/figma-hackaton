@@ -28,18 +28,36 @@ const TopSellingSection = () => {
         </div>
 
         {/* Showing products and sort */}
-        <div className="flex flex-wrap items-center justify-between gap-4 sm:flex-row flex-col">
-          <p className="text-sm text-gray-700">Showing 1-10 of 100 Products</p>
+        <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-0 sm:flex-row flex-col">
+          <p className="text-sm text-gray-700 sm:mr-auto"></p>
           <div className="relative">
             <button
               className="text-sm text-gray-700 flex items-center"
               onClick={toggleDropdown}
             >
-              Sort by: Most Popular
+              
               <span>
-                <ChevronDown className="w-4 h-4" />
+                {/* <ChevronDown className="w-4 h-4" /> */}
               </span>
             </button>
+
+            <div  className="flex flex-wrap items-center justify-between gap-4 sm:gap-0 sm:flex-row flex-col">
+  <p className="text-sm text-gray-700 sm:mr-auto">Showing 1-10 of 100 Products</p>
+  <div className="relative">
+    <button
+      className="text-sm text-gray-700 flex items-center"
+      onClick={toggleDropdown}
+    >
+      Sort by: Most Popular
+      <span>
+        <ChevronDown className="w-4 h-4 ml-1" />
+      </span>
+    </button>
+  </div>
+</div>
+
+           
+
 
             {isDropdownOpen && (
               <div className="absolute right-0 mt-1 bg-white shadow-lg rounded-md z-10 w-48">
