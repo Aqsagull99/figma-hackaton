@@ -85,7 +85,80 @@ const Card = () => {
 
         <h1 className="text-4xl font-bold mb-6 mt-3 text-primary">Your Card</h1>
 
-        <div className="flex flex-col lg:flex-row-reverse  gap-8 order-2 lg:order-2">
+        <div className="flex flex-col lg:flex-row gap-8 ">
+  
+{/* card */}
+<div className="flex-1 flex flex-col gap-4 ">
+            {cartItems.length === 0 ? (
+              <p className="text-lg text-gray-700">
+                No items in your cart yet.
+              </p>
+            ) : (
+              cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="relative flex items-center justify-between bg-white shadow-md p-4 rounded-lg"
+                >
+                  {/* Delete Icon */}
+                  <button
+                    onClick={() => handleDelete(item.id)}
+                    className="absolute top-2 right-2 text-[#FF3333] "
+                  >
+                    <RiDeleteBin6Line />
+                  </button>
+
+                  {/* Product Image */}
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={100}
+                    height={100}
+                    className="w-20 h-20 rounded-lg"
+                  />
+
+                  {/* Product Info */}
+                  <div className="flex-1 px-4 text-[10px] sm:text-lg">
+                    <h3 className="text-[12px] sm:text-lg font-bold">{item.name}</h3>
+                    
+                    <p className="flex gap-1">
+                      <span>Size:</span>
+                      <span className="text-gray-400">{item.size}</span>
+                    </p>
+                    <p>
+                      <span>Color:</span>{" "}
+                      <span className="text-gray-400">{item.color}</span>{" "}
+                    </p>
+                    <p className="mt-2">
+                      <span className=" text-2xl font-bold text-primary ">
+                        {item.price}
+                      </span>{" "}
+                    </p>
+                  </div>
+
+                  {/* Quantity Controls */}
+                  <div className="flex items-center gap-2 mt-20 ">
+                    <button
+                      onClick={() => handleDecrease(item.id)}
+                      className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-200 rounded hover:bg-gray-300"
+                    >
+                      -
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      onClick={() => handleIncrease(item.id)}
+                      className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-200 rounded hover:bg-gray-300"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div> 
+
+       
+
+
           {/* Order Summary */}
           <div className="w-full lg:w-1/3 bg-gray-100 p-4 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Order Summary</h2>
@@ -159,73 +232,11 @@ const Card = () => {
           </div>
 
           {/* Cart Items */}
-          <div className="flex-1 flex flex-col gap-4 order-1 lg:order-1">
-            {cartItems.length === 0 ? (
-              <p className="text-lg text-gray-700">
-                No items in your cart yet.
-              </p>
-            ) : (
-              cartItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="relative flex items-center justify-between bg-white shadow-md p-4 rounded-lg"
-                >
-                  {/* Delete Icon */}
-                  <button
-                    onClick={() => handleDelete(item.id)}
-                    className="absolute top-2 right-2 text-[#FF3333] "
-                  >
-                    <RiDeleteBin6Line />
-                  </button>
+          
+          
 
-                  {/* Product Image */}
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    width={100}
-                    height={100}
-                    className="w-20 h-20 rounded-lg"
-                  />
 
-                  {/* Product Info */}
-                  <div className="flex-1 px-4 text-[10px] sm:text-lg">
-                    <h3 className="text-[12px] sm:text-lg font-bold">{item.name}</h3>
-                    
-                    <p className="flex gap-1">
-                      <span>Size:</span>
-                      <span className="text-gray-400">{item.size}</span>
-                    </p>
-                    <p>
-                      <span>Color:</span>{" "}
-                      <span className="text-gray-400">{item.color}</span>{" "}
-                    </p>
-                    <p className="mt-2">
-                      <span className=" text-2xl font-bold text-primary ">
-                        {item.price}
-                      </span>{" "}
-                    </p>
-                  </div>
 
-                  {/* Quantity Controls */}
-                  <div className="flex items-center gap-2 mt-20 ">
-                    <button
-                      onClick={() => handleDecrease(item.id)}
-                      className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-200 rounded hover:bg-gray-300"
-                    >
-                      -
-                    </button>
-                    <span>{item.quantity}</span>
-                    <button
-                      onClick={() => handleIncrease(item.id)}
-                      className="px-2 py-1 sm:px-3 sm:py-1 bg-gray-200 rounded hover:bg-gray-300"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
         </div>
       </div>
     </section>
@@ -233,3 +244,13 @@ const Card = () => {
 };
 
 export default Card;
+
+
+
+
+
+
+
+
+
+
