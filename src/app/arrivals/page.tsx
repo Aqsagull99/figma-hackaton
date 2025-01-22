@@ -1,11 +1,12 @@
 "use client";
 import ProductCard from "../../components/ProductCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { products } from "@/ProductsData";
+import { client } from "@/sanity/lib/client";
 
-const TopSellingSection = () => {
+  const  TopSellingSection = () => {
   // State to toggle the dropdown menu
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -14,6 +15,8 @@ const TopSellingSection = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+ // Fetch data from backend
+ 
   return (
     <section className="w-full py-12 bg-gray-100">
       <div className="container mx-auto px-6">
@@ -148,3 +151,7 @@ const TopSellingSection = () => {
 };
 
 export default TopSellingSection;
+
+
+
+

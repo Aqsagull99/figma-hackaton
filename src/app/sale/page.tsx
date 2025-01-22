@@ -5,6 +5,10 @@ import Link from "next/link";
 
 import { useState } from "react";
 import ProductCard from "../../components/ProductCard";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+
+
 
 const TopSellingSection = () => {
   // State to toggle the dropdown menu
@@ -14,6 +18,8 @@ const TopSellingSection = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+   
+   const products = useSelector((state:RootState)=>state.ecoProducts)
   return (
     <section className="w-full py-12 bg-gray-100">
       <div className="container mx-auto px-6">
@@ -148,3 +154,7 @@ const TopSellingSection = () => {
 };
 
 export default TopSellingSection;
+
+
+
+

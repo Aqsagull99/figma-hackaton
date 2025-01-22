@@ -7,6 +7,9 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { ChevronRight } from "lucide-react";
 
 import { GoArrowRight } from "react-icons/go";
+// import {  useRouter } from "next/router";
+
+
 
 const Card = () => {
   const [cartItems, setCartItems] = useState([
@@ -39,6 +42,8 @@ const Card = () => {
     },
   ]);
 
+  
+
   // Calculate total price
   const totalPrice = cartItems.reduce(
     (total, item) =>
@@ -54,6 +59,8 @@ const Card = () => {
     );
   };
 
+  
+
   const handleDecrease = (id: number) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -67,6 +74,16 @@ const Card = () => {
   const handleDelete = (id: number) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
+
+//   const router = useRouter();  // Call useRouter to get router instance
+
+// const handleCheckout = () => {
+//   // Use router.push to navigate to the checkout page
+//   router.push("/checkout");
+// };
+
+
+
 
   return (
     <section className="w-full py-12">
@@ -225,10 +242,21 @@ const Card = () => {
 
             <div className="relative items-center">
               {/* Checkout Button */}
-              <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 flex items-center justify-center gap-2">
+             <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 flex items-center justify-center gap-2"> 
                 Go to Checkout
                 <GoArrowRight className="text-white mt-1 font-semibold" />
-              </button>
+              </button> 
+
+               {/* <button
+      onClick={handleCheckout}
+      className="w-full bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 flex items-center justify-center gap-2"
+    >
+      Go to Checkout
+      <GoArrowRight className="text-white mt-1 font-semibold" />
+    </button> */}
+
+
+
             </div>
           </div>
         </div>
@@ -238,3 +266,7 @@ const Card = () => {
 };
 
 export default Card;
+
+
+
+

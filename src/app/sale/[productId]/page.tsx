@@ -1,30 +1,44 @@
 "use client";
 
+// import { RootState } from "@/app/redux/store";
 import CustomerReviewSectiontwo from "@/components/reviewtwo";
 import TopSellingSectiontwo from "@/components/Topsellingtwo";
 
 import { Products, products } from "@/ProductsData";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const [data, setData] = useState<Products>();
   const [quantity, setQuantity] = useState(1);
 
+  // const products = useSelector((state:RootState)=>state.ecoProducts)
+
+
+  
   useEffect(() => {
     setData(products[Number(productId) - 1]);
   }, [productId]);
 
-  const handleIncrease = () => {
+  const handleIncrease  = () => {
     setQuantity((prev) => prev + 1);
   };
 
   const handleDecrease = () => {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
   };
+
+  
+  
+
+//  for data types
+
+// const [cartitem, setcartitem] = useState()
 
   return (
     <section className="w-full py-12 ">
@@ -34,7 +48,7 @@ const ProductDetail = () => {
           {/* Breadcrumbs */}
           <div className="flex items-center mb-4 text-sm text-gray-600 ">
             <Link href={"/"}>
-              <span className="  hover:underline">Home</span>
+              <span  className="  hover:underline">Home</span>
             </Link>
             <span className="mx-2">{">"}</span>
             <Link href={"/shop"}>
@@ -133,9 +147,12 @@ const ProductDetail = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-lg mb-2">Select Color:</h3>
                 <div className="flex gap-2">
-                  <button className="w-8 h-8 bg-select1 rounded-full"></button>
+
+                
+  
+                 <button className="w-8 h-8 bg-select1 rounded-full"></button>
                   <button className="w-8 h-8 bg-select2 rounded-full"></button>
-                  <button className="w-8 h-8 bg-select3 rounded-full"></button>
+                  <button className="w-8 h-8 bg-select3 rounded-full"></button> 
                 </div>
               </div>
 
@@ -143,7 +160,15 @@ const ProductDetail = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-lg mb-2">Choose Size:</h3>
                 <div className="flex gap-2 text-[10px] sm:text-[20px] md:text-[20px] lg:text-[20px]  ">
-                  <button className="px-4 py-2 border rounded-full bg-gray-200 hover:bg-primary hover:text-maintext">
+  
+
+
+
+
+
+            <button className="px-4 py-2 border rounded-full bg-gray-200 hover:bg-primary hover:text-maintext"></button>
+
+                   <button className="px-4 py-2 border rounded-full bg-gray-200 hover:bg-primary hover:text-maintext">
                     Small
                   </button>
                   <button className="px-4 py-2 border rounded-full bg-gray-200 hover:bg-primary hover:text-maintext">
@@ -154,9 +179,12 @@ const ProductDetail = () => {
                   </button>
                   <button className="px-4 py-2 border rounded-full bg-gray-200 hover:bg-primary hover:text-maintext">
                     Xlarge
-                  </button>
+                  </button> 
                 </div>
               </div>
+
+
+
 
               {/* Quantity Section */}
               <div className="mb-6">
@@ -191,3 +219,6 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
+
+

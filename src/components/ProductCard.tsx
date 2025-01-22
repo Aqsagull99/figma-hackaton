@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 type ProductCardProps = {
-  name: string;
+   name: string;
   title: string;
   description: string;
   price: string;
@@ -14,7 +14,10 @@ type ProductCardProps = {
   score: string;
   link: string;
   callback?: () => void;
+ 
 };
+
+
 
 const ProductCard = ({
   

@@ -1,29 +1,37 @@
+
+
 import React from "react";
 import { RiFacebookLine } from "react-icons/ri";
 import { FaInstagram } from "react-icons/fa";
 import { CiTwitter } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
+import Link from "next/link";
 
 import Image from "next/image";
 
 import Letter from "./Letter";
 
-function Footer() {
+
+
+ function Footer() {
+
+
   return (
-    <div className="bg-customGray text-primary absolute mt-8  ">
+    <div className="bg-customGray text-primary absolute mt-8 ">
       <Letter />
       {/* Footer Container */}
       <div className="w-full max-w-[1440px] mx-auto px-6 md:px-24 py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {/* Section 1 */}
         <div>
-          <h1 className="text-3xl font-poppins font-medium">SHOP.CO</h1>
+          <h1 className="text-3xl font-poppins font-medium">  SHOP.CO  </h1>
           <p className="text-[12px] mb-4 font-poppins">
             We have clothes that suit your style and which you are proud to wear.
             From women to men.
+            {/* {data.description} */}
           </p>
 
           {/* Icons */}
-          <div className="flex gap-4 mt-5">
+          {/* <div className="flex gap-4 mt-5">
             <div className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full">
               <CiTwitter />
             </div>
@@ -36,8 +44,39 @@ function Footer() {
             <div className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full">
               <FaGithub />
             </div>
-          </div>
+          </div> */}
+
+
+<div className="flex gap-4 mt-5">
+  <Link
+    href="https://twitter.com/yourprofile"
+    className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full"
+  >
+    <CiTwitter />
+  </Link>
+  <Link
+    href="https://facebook.com/yourprofile"
+    className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full"
+  >
+    <RiFacebookLine />
+  </Link>
+  <Link
+    href="https://instagram.com/yourprofile"
+    className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full"
+  >
+    <FaInstagram />
+  </Link>
+  <Link
+    href="https://github.com/yourprofile"
+    className="hover:bg-primary hover:text-maintext bg-maintext p-2 rounded-full"
+  >
+    <FaGithub />
+  </Link>
+</div>
+
+
         </div>
+
 
         {/* Company Section */}
         <div>
@@ -103,6 +142,9 @@ function Footer() {
 }
 
 export default Footer;
+
+
+
 
 
 

@@ -10,11 +10,15 @@ export interface Products {
     score: string;
     imageUrl: string;
     link: string;
+  size: string[];  
+  color: string[];
+  qty: number;
 }
+
 export const products: Products[] = [
     {
         id: 1,
-        name:"Gradient Graphic T-shirt",
+        name:"Gradienttt Graphic T-shirt",
         title: "Product 1",
         description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         price: "$260",
@@ -24,6 +28,9 @@ export const products: Products[] = [
         score: "4.5/5",
         imageUrl: "/image 8.png",
         link: "/product/product1",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 2,
@@ -32,11 +39,14 @@ export const products: Products[] = [
         description: "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
         price: "$90",
         oldPrice: " $300 ",
-         discount: "-40%",
+        discount: "-40%",
         rating: 4,
         score: "4.5/5",
         imageUrl: "/Frame 34 (2).png",
         link: "/product/product2",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 3,
@@ -51,6 +61,10 @@ export const products: Products[] = [
         score: "4.5/5",
         imageUrl: "/Frame 38 (1).png",
         link: "/product/product3",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
+        
     },
     {
         id: 4,
@@ -64,6 +78,9 @@ export const products: Products[] = [
         score: "4.5/5",
         imageUrl: "/arrivals/Frame33.png",
         link: "/product/product4",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 5,
@@ -77,6 +94,9 @@ export const products: Products[] = [
         score: "4.8/5",
         imageUrl: "/arrivals/Frame 34.png",
         link: "/product/product5",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 6,
@@ -90,6 +110,9 @@ export const products: Products[] = [
         score: "4.9/5",
         imageUrl: "/arrivals/Frame 38.png",
         link: "/product/product6",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 7,
@@ -103,6 +126,9 @@ export const products: Products[] = [
         score: "4.7/5",
         imageUrl: "/top/Frame 32.png",
         link: "/product/product7",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 8,
@@ -116,6 +142,9 @@ export const products: Products[] = [
         score: "4.6/5",
         imageUrl: "/top/Frame 33.png",
         link: "/product/product8",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
     {
         id: 9,
@@ -129,5 +158,12 @@ export const products: Products[] = [
         score: "5/5",
         imageUrl: "/top/Frame 34.png",
         link: "/product/product9",
+        size: ["S", "M", "L", "XL"],
+       color: ["red", "blue", "black"],
+       qty: 1,
     },
 ];
+
+
+
+// const products = useSelector((state:any)=>state.ecoProducts)
